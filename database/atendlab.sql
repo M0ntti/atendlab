@@ -11,7 +11,7 @@ CREATE TABLE usuarios(
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    perfil ENUM('admin','atendente') DEFAULT 'atendente',
+    perfil ENUM('admin','atendente', 'aluno') DEFAULT 'atendente',
     status ENUM('ativo','inativo') DEFAULT 'ativo',
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -33,7 +33,7 @@ CREATE TABLE tipos_atendimentos(
     status ENUM('ativo', 'inativo') DEFAULT 'ativo' 
 );
 
-CREATE TABLE atendendimentos(
+CREATE TABLE atendimentos(
     id_atendimentos INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     id_usuarios INT NOT NULL,
     id_pessoas INT NOT NULL,

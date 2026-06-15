@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/app/Controllers/UsuariosController.php'
+require_once __DIR__ . '/app/Controllers/UsuariosController.php';
 $controller = $_GET['controller'] ?? 'home';
 $action = $_GET['action'] ?? 'index';
 
@@ -25,7 +25,7 @@ if ($controller == 'usuarios') {
             break;
         
         case 'excluir':
-            $usuaiosController->excluir()
+            $usuaiosController->excluir();
             break;
 
         default:
