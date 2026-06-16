@@ -23,14 +23,15 @@ CREATE TABLE pessoas(
     telefone VARCHAR(20),
     curso VARCHAR(100),
     periodo VARCHAR(100),
-    status VARCHAR(100)
+    status ENUM('ativo', 'inativo') DEFAULT 'ativo' 
 );
 
 CREATE TABLE tipos_atendimentos(
     id_tipo_atendimento INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
-    status ENUM('ativo', 'inativo') DEFAULT 'ativo' 
+    status ENUM('ativo', 'inativo') DEFAULT 'ativo',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE atendimentos(
